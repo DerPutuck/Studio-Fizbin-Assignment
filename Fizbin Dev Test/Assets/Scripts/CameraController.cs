@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     [HideInInspector] public Transform player;
     
     [Header("CameraFollow")]
-    public float smoothTime;
+    [SerializeField] private float smoothTime;
     private Vector3 velocity = Vector3.zero;
     
     void Update()
@@ -23,4 +23,5 @@ public class CameraController : MonoBehaviour
         if (player != null)
             transform.position = Vector3.SmoothDamp(transform.position, player.position, ref velocity, smoothTime);
     }
+    
 }
